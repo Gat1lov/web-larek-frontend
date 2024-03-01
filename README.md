@@ -40,3 +40,6 @@ npm run build
 ```
 yarn build
 ```
+
+## UML-схема
+![Uml-схема](src/images/UML-схема.jpg)
