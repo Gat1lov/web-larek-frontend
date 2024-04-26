@@ -1,9 +1,10 @@
-import { Component } from "../base/Component";
-import { EventEmitter } from "../base/events";
-import { IBasketView } from "../../types/index";
-import { createElement, ensureElement, formatNumber } from "../../utils/utils";
+import { Component } from "./base/Component";
+import { EventEmitter } from "./base/events";
+import { IBasketView } from "../types/index";
+import { createElement, ensureElement, formatNumber } from "../utils/utils";
 
 export class Basket extends Component<IBasketView> {
+
     protected _list: HTMLElement;
     protected _total: HTMLElement;
     protected _button: HTMLElement;
@@ -12,8 +13,8 @@ export class Basket extends Component<IBasketView> {
         super(container);
 
         this._list = ensureElement<HTMLElement>('.basket__list', this.container);
-        this._total = this.container.querySelector('.basket__total');
-        this._button = this.container.querySelector('.basket__action');
+        this._total = this.container.querySelector('.basket__price');
+        this._button = this.container.querySelector('.button');
 
         if (this._button) {
             this._button.addEventListener('click', () => {
@@ -45,6 +46,7 @@ export class Basket extends Component<IBasketView> {
     }
 
     set total(total: number) {
-        this.setText(this._total, `$formatNumber(total) деняг`);
+        this.setText(this._total, `${formatNumber(total)} деняг`);
     }
+
 }

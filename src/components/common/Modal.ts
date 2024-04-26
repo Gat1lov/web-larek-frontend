@@ -4,6 +4,7 @@ import { ensureElement } from "../../utils/utils";
 import { IModalData } from "../../types/index";
 
 export class Modal extends Component<IModalData> {
+
     protected _closeButton: HTMLButtonElement;
     protected _content: HTMLElement;
 
@@ -38,4 +39,5 @@ export class Modal extends Component<IModalData> {
         this.open();
         return this.container;
     }
+
 }
